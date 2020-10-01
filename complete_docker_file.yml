@@ -1,0 +1,98 @@
+version: '3'
+
+services: 
+  test_service_a:
+    build: .  // imag httpd
+      context: .
+      dockerfile: docker_filehere
+      args: 
+        version: 1.2
+        version2: 2.3
+      cache-from: test:1.2
+      shm_size: '2gb'
+      networks: 
+        - test_networka
+        - test_networkb
+      labels: 
+        - labela: valuea
+        - labelb: valueb
+    image:
+    ports: 
+      - 3456: 7000
+      - 4567: 4566
+    networks: 
+      - test_networka
+      - test_networkb
+    volumes: 
+      - test_volumea: /var/lib/mysql
+    depends_on: 
+      - test_service_b
+    network_mode: 'host' 'bridge' 'none' 'overlay' 'ingress'
+    
+    
+    ulimits: 
+      - 
+    sysctls:
+      - vm.swappiness: 59
+    tmpfs: 
+      - /var/lib
+      - /etc/
+    
+    hostname: 
+    extra_hosts: 
+      - other: 127.0.0.1
+    working_dir: 
+    read_only: 
+    privileged: 
+    tty: 
+
+    environment: 
+      - e: docker_filehere
+      - f: fertent
+    env_file: 
+      - a.txt
+    links: 
+      - test_service_b
+    external_links: 
+      - test_service_b
+    logging: 
+      driver: "json-file"
+      options: 
+        max-file: 20
+        max-size: 20m
+        mode: "blocking"
+    healthcheck:
+      test:
+        command: CMD curl -L http://localhost
+        interval:
+        timeout:
+        retries:
+        start_period:
+    restart: no / on-failure / always / unless-stopped
+    stop_signal: SIGKILL/INT/TERM/QUIT/WINCH/USR1
+    stop_grace_period: 12
+
+    pid: host
+
+  test_service_b:
+
+
+networks: 
+  test_networka:
+    external: true
+    name: test_netowkr
+    driver:  default / host / none / bridge /overlay / ingress
+    attachable: true
+    ipam: 
+      driver: default / host / none / bridge /overlay / ingress
+      config: 
+        -subnet: 1.1.1.1/34
+        -subnet: 1.1.1.1/39
+
+
+
+volumes:
+  test_volumea:
+    external: true
+    name: test_vol
+
