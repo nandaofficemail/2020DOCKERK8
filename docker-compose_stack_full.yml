@@ -1,0 +1,46 @@
+version: '3.3'
+
+services:
+    mynginxserver:
+        image: nginx
+        configs:
+            - my_config
+        secrets:
+            - source: my_secret
+              target: redis_secret
+              uid: '103'
+              gid: '103'
+              mode: 0440    
+        deploy:
+            restart_policy:
+                 condition: on-failure
+                 delay: 5s
+                 max_attempts: 2
+                 window : '2s'
+            update_config:
+                 parallelism: 2
+                 delay: 3s
+            endpoint_mode: dnsrr 
+            placement:
+                 max_replicas_per_node: 3
+                 constraints: 
+                     - node.role==manager
+            replicas: 3
+            labels: [APP=NGINX]
+            mode: global
+            endpoint_mode: vip
+            resources:
+                limits:
+                  cpus: '0.50'
+                  memory: 50M
+                reservations:
+                  cpus: '0.25'
+                  memory: 20M
+        ports: 
+            - 83:80
+configs:
+    my_config:
+        file: ./nginx.conf
+secrets:
+    my_secret:
+        file: ./nginx.conf
