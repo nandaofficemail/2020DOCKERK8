@@ -20,6 +20,8 @@ services:
             update_config:
                  parallelism: 2
                  delay: 3s
+                 order: stop-first
+                 failure_action: rollback
             endpoint_mode: dnsrr 
             placement:
                  max_replicas_per_node: 3
