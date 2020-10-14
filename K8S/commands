@@ -1,1 +1,3 @@
-sudo snap install microk8s --classic --channel=1.17/stable
+> sudo snap install microk8s --classic --channel=1.17/stable
+> microk8s.enable dns
+> microk8s.status
