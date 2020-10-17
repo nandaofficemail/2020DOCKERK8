@@ -1,6 +1,29 @@
-> sudo snap install kubectl --classic 
-> sudo snap install microk8s --classic --channel=1.17/stable
-> microk8s.enable dns  
-> microk8s.status
-> microk8s.kubectl create
- 
+sudo snap install kubectl --classic 
+sudo snap install microk8s --classic --channel=1.17/stable
+microk8s.enable dns  
+microk8s.status
+microk8s.kubectl create
+------------------------------------------------------------------
+installtion
+---------------
+kubeadm init
+sudo cp /etc/kubernetes/admin.conf $HOME/
+sudo chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
+-----------------------------------------------------------------------------
+kubectl cluster-info
+kubectl version --client
+kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl get nodes  
+kubectl taint nodes  mildevkub020 node-role.kubernetes.io/master-
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+kubectl version -o json
+kubectl version -o yaml
+kubectl config view
+kubectl get pods
+kubectl get pods -w
+kubectl get pod -n kube-system -w
+kubectl get services
+kubectl get namespaces
+kubectl get all
+
