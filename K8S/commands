@@ -50,3 +50,5 @@ kubectl apply -f https://k8s.io/examples/application/deployment-scale.yaml
 kubectl get pods -l app=nginx
 kubectl delete deployment nginx-deployment
 kubectl describe pod 
+
+Self Healing Aspect of orchestrator which is the Main Goal
