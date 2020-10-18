@@ -27,3 +27,26 @@ kubectl get services
 kubectl get namespaces
 kubectl get all
 
+https://www.youtube.com/watch?v=XJufs3ZZBVY
+https://k21academy.com/kubernetes05
+https://k21academy.com/kubernetes11
+https://k21academy.com/kubernetes26
+https://k21academy.com/kubernetes30
+
+kubectl get nodes
+kubectl get pods
+kubectl get pods  -w
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+systemctl restart kubelet
+kubectl get events
+
+
+kubectl get nodes --show-labels
+kubectl describe node node1 | grep Taints
+kubectl get pod tt --output=yaml
+kubectl get nodes -o jsonpath='{range .items[*]}{@.metadata.name}{"\n"}{range @.status.conditions[*]}{@.type}={@.status}{"\n"}{end}{end}'
+kubectl apply -f https://k8s.io/examples/application/deployment-scale.yaml
+kubectl get pods -l app=nginx
+kubectl delete deployment nginx-deployment
+kubectl describe pod 
