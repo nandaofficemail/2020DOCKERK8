@@ -24,6 +24,8 @@ kubeadm init
 sudo cp /etc/kubernetes/admin.conf $HOME/
 sudo chown $(id -u):$(id -g) $HOME/admin.conf
 export KUBECONFIG=$HOME/admin.conf
+
+kubeadm token create --print-join-command
 -----------------------------------------------------------------------------
 kubectl cluster-info
 kubectl version --client
