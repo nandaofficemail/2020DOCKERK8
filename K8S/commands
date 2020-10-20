@@ -4,6 +4,15 @@ microk8s.enable dns
 microk8s.status
 microk8s.kubectl create
 ------------------------------------------------------------------
+
+Commands:
+------------
+
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run
+
+
+
+
 installtion
 ---------------
 kubeadm init
