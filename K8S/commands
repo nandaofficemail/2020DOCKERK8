@@ -1,5 +1,6 @@
-sudo snap install kubectl --classic 
-sudo snap install microk8s --classic --channel=1.17/stable
+microk8s.kubectl get pods --all-namespaces
+microk8s.enable dns dashboard
+microk8s.kubectl get pods --all-namespaces
 microk8s.enable dns  
 microk8s.status
 microk8s.kubectl create
