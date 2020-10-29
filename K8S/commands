@@ -1,4 +1,4 @@
-microk8s.kubectl get pods --all-namespaces
+sudo snap install microk8s --edge --classic
 microk8s.enable dns dashboard
 microk8s.kubectl get pods --all-namespaces
 microk8s.enable dns  
