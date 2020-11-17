@@ -37,3 +37,31 @@ spec:
         image: nginx:1.17.3
         ports:
         - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: details-v1
+  labels:
+    app: details
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: details
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: details
+        version: v1
+    spec:
+      serviceAccountName: bookinfo-details
+      containers:
+        - name: details
+          image: docker.io/sixeyed/bookinfo-details:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9080
+---
