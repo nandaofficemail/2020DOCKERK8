@@ -7,3 +7,6 @@ microk8s.kubectl apply -f - <<EOF
 ..
 ..
 EOF
+microk8s.kubectl label namespace default istio-injection=enabled
+microk8s.kubectl describe namespace default
+microk8s.kubectl describe virtualservice details
