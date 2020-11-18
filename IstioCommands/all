@@ -1,0 +1,9 @@
+microk8s.kubectl port-forward svc/istio-ingressgateway 9080:9080 -n istio-system
+microk8s.kubectl edit svc istio-ingressgateway -n istio-system
+microk8s.kubectl get svc istio-ingressgateway -n istio-system
+microk8s.kubectl get gateway -n istio-system
+microk8s.kubectl get ingress -n istio-system
+microk8s.kubectl apply -f - <<EOF
+..
+..
+EOF
