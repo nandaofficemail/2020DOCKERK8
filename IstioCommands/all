@@ -1,18 +1,23 @@
-microk8s.kubectl port-forward svc/istio-ingressgateway 9080:9080 -n istio-system
-microk8s.kubectl edit svc istio-ingressgateway -n istio-system
-microk8s.kubectl get svc istio-ingressgateway -n istio-system
-microk8s.kubectl get gateway -n istio-system
-microk8s.kubectl get ingress -n istio-system
-microk8s.kubectl apply -f - <<EOF
+>microk8s.kubectl port-forward svc/istio-ingressgateway 9080:9080 -n istio-system
+>microk8s.kubectl edit svc istio-ingressgateway -n istio-system
+>microk8s.kubectl get svc istio-ingressgateway -n istio-system
+>microk8s.kubectl get gateway -n istio-system
+>microk8s.kubectl get ingress -n istio-system
+>microk8s.kubectl apply -f - <<EOF
 ..
 ..
 EOF
-microk8s.kubectl label namespace default istio-injection=enabled
-microk8s.kubectl describe namespace default
-microk8s.kubectl describe virtualservice details
-microk8s.kubectl create namespace r
-kubectl get ingress simple-ingress -o wide
-kubectl get ingress simple-ingress -o wide
-kubectl get svc istio-ingress
-curl http://$INGRESS_URL/headers
-kubectl get po -l istio=ingress -o jsonpath='{.items[0].status.hostIP}'
+
+>cat <<EOF | microk8s.kubectl create -f -
+apiVersion: extensions/v1beta1
+kind: Ingress
+
+>microk8s.kubectl label namespace default istio-injection=enabled
+>microk8s.kubectl describe namespace default
+>microk8s.kubectl describe virtualservice details
+>microk8s.kubectl create namespace r
+>kubectl get ingress simple-ingress -o wide
+>kubectl get ingress simple-ingress -o wide
+>kubectl get svc istio-ingress
+>curl http://$INGRESS_URL/headers
+>kubectl get po -l istio=ingress -o jsonpath='{.items[0].status.hostIP}'
