@@ -23,3 +23,4 @@ kind: Ingress
 >kubectl get po -l istio=ingress -o jsonpath='{.items[0].status.hostIP}'
 >microk8s.kubectl get svc -n default
 >microk8s.kubectl get svc -n istio-system
+>microk8s enable metallb:10.64.140.43-10.64.140.49
