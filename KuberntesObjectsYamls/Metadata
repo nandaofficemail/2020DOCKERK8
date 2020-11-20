@@ -1,0 +1,28 @@
+metadata:
+  name: details
+  labels:
+    app: details
+    service: details
+---
+metadata:
+  name: details-v1
+  labels:
+    app: details
+    version: v1
+---
+ metadata:
+      labels:
+        app: details
+        version: v1
+---
+ metadata:
+  name: bookinfo-details
+  labels:
+    account: details
+---
+metadata:
+  labels:
+    app: webserver
+  name: my-nginx
+  namespace: my-namespace
+---
