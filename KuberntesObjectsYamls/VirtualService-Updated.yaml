@@ -25,6 +25,11 @@ spec:
         port:
           number: 9080
       weight: 0
+    timeout: 23s
+    retries:
+      attempts: 3
+      perTryTimeout: 30s
+      retryOn: 5xx
   - route:
     - destination:
         host: reviews
@@ -33,6 +38,11 @@ spec:
           number: 9080
           
       weight: 100
+    timeout: 23s
+     retries:
+       attempts: 3
+       perTryTimeout: 30s
+       retryOn: 5xx
     fault:
       delay:
         percent: 100
