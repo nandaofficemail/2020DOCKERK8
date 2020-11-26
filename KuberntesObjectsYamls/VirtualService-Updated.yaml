@@ -34,6 +34,6 @@ spec:
         percent: 100
         fixedDelay: 2.5s
       abort:
-        percent: 50
-        httpStatus: 503
+         percent: 50
+         httpStatus: 503
   
