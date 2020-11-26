@@ -31,3 +31,39 @@ spec:
     when:
     - key: request.auth.claims[foo]
       values: ["bar"]
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: productpage-authz
+  namespace: default
+spec:  
+  selector:
+    matchLabels:
+      app: productpage
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]
+    when:
+    - key: request.auth.claims[iss]
+      values: ["testing@secure.istio.io"]
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: productpage-authz
+  namespace: default
+spec:  
+  selector:
+    matchLabels:
+      app: productpage
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]
+    when:
+    - key: request.auth.claims[sub]
+      values: ["elton@secure.istio.io"]
+---
+
