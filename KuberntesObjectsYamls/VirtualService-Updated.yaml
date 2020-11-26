@@ -9,6 +9,10 @@ spec:
   	- bookinfo-gateway 
   http:
   - match:
+    - uri:
+       exact: /productpage
+    - uri:
+        prefix: /product
     - headers:
         end-user:
           exact: tester
