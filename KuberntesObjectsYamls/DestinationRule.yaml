@@ -14,6 +14,13 @@ spec:
   - name: v2
     labels:
       version: v2
+    trafficPolicy:
+        outlierDetection:
+          consecutiveErrors: 2
+          interval: 1m
+          baseEjectionTime: 5m
+          maxEjectionPercent: 100
+
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
