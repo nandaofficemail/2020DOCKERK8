@@ -18,31 +18,13 @@ spec:
           exact: tester
         cookie:
           regex: "^(.*?;)?(product-page=v2)(;.*)?$"   
-  - route:
+    route:
     - destination:
         host: reviews
         subset: v2
         port:
           number: 9080
       weight: 0
-    timeout: 23s
-    retries:
-      attempts: 3
-      perTryTimeout: 30s
-      retryOn: 5xx
-  - route:
-    - destination:
-        host: reviews
-        subset: v1
-        port:
-          number: 9080
-          
-      weight: 100
-    timeout: 23s
-     retries:
-       attempts: 3
-       perTryTimeout: 30s
-       retryOn: 5xx
     fault:
       delay:
         percent: 100
@@ -50,4 +32,21 @@ spec:
       abort:
          percent: 50
          httpStatus: 503
-  
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+        port:
+          number: 9080
+      weight: 100
+    - destination:
+        host: reviews
+        subset: v1
+        port:
+          number: 9080
+      weight: 100
+    timeout: 23s
+    retries:
+      attempts: 3
+      perTryTimeout: 30s
+      retryOn: 5xx
