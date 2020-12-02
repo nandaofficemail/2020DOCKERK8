@@ -35,10 +35,14 @@ spec:
     - destination:
         host: reviews
         subset: v1
+        port:
+          number: 9080
       weight: 100
     - destination:
         host: reviews
         subset: v1
+        port:
+          number: 9080
       weight: 100
     timeout: 23s
     retries:
