@@ -28,9 +28,9 @@ spec:
     
   - route:
       fault:
-      delay:
-        percent: 100
-        fixedDelay: 2.5s
+        delay:
+          percent: 100
+          fixedDelay: 2.5s
       abort:
          percent: 50
          percentage:
