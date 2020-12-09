@@ -9,6 +9,7 @@ spec:
   	- bookinfo-gateway 
   http:
   - match:
+    - port: 15029
     - uri:
        exact: /productpage
     - uri:
