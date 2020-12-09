@@ -25,7 +25,9 @@ spec:
         subset: v2
         port:
           number: 9080
-    fault:
+    
+  - route:
+      fault:
       delay:
         percent: 100
         fixedDelay: 2.5s
@@ -34,7 +36,6 @@ spec:
          percentage:
           value: 50
          httpStatus: 503
-  - route:
     - destination:
         host: reviews
         subset: v1
