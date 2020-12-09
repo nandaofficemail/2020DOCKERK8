@@ -31,6 +31,8 @@ spec:
         fixedDelay: 2.5s
       abort:
          percent: 50
+         percentage:
+          value: 50
          httpStatus: 503
   - route:
     - destination:
