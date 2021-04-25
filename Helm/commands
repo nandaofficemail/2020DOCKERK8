@@ -24,3 +24,17 @@ kubectl version
 
 
 minikube status
+
+
+to Install Helm
+----------------
+
+curl -LO https://get.helm.sh/helm-v3.1.1-linux-amd64.tar.gz
+
+> tar -xzvf helm-v3.1.1-linux-amd64.tar.gz 
+linux-amd64/
+linux-amd64/README.md
+linux-amd64/LICENSE
+linux-amd64/helm
+
+> lenovo@ubuntu:~$ sudo mv linux-amd64/helm /usr/local/bin/helm
