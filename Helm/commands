@@ -38,3 +38,6 @@ linux-amd64/LICENSE
 linux-amd64/helm
 
 > lenovo@ubuntu:~$ sudo mv linux-amd64/helm /usr/local/bin/helm
+
+> helm version --short
+> kubectl version --short
