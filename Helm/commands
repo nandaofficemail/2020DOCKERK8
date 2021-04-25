@@ -50,4 +50,4 @@ Helm Commands:
 > helm repo update
 > helm install demo-mysql stable/mysql
 > helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-
+> kubectl get all  | grep mysql
