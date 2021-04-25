@@ -9,3 +9,5 @@ minikube version
 
 minikube start
 minikube addons enable ingress
+minikube ip
+sudo vi /etc/hosts
