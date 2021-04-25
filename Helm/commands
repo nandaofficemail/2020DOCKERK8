@@ -41,3 +41,4 @@ linux-amd64/helm
 
 > helm version --short
 > kubectl version --short
+> kubectl config view
