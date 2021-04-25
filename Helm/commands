@@ -12,3 +12,12 @@ minikube addons enable ingress
 minikube ip
 sudo vi /etc/hosts
 vim /etc/hosts
+
+add entry againt IP from minikube ip to frontend and backend as frontend.minikube.local and backend.minikube.local
+
+to Install Kubectl
+-------------------
+
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+kubectl version
