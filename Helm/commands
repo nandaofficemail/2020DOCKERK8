@@ -54,5 +54,4 @@ Helm Commands:
 > kubectl get all  | grep demo-mysql
 > kubectl get secret | grep demo-mysql
 > helm uninstall demo-mysql
-
 > 
