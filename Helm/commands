@@ -51,4 +51,8 @@ Helm Commands:
 > helm install demo-mysql stable/mysql
 > helm repo add stable https://kubernetes-charts.storage.googleapis.com/ ---- old
 > helm repo add stable https://charts.helm.sh/stable  ------- new
-> kubectl get all  | grep mysql
+> kubectl get all  | grep demo-mysql
+> kubectl get secret | grep demo-mysql
+> helm uninstall demo-mysql
+
+> 
