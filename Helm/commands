@@ -44,6 +44,13 @@ linux-amd64/helm
 > kubectl config view
 
 
+General Commands:
+--------------
+
+
+snap disable microk8s
+sudo snap remove microk8s
+
 Helm Commands:
 ------------------------
 
