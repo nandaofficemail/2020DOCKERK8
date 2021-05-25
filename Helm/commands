@@ -10,6 +10,9 @@ minikube version
 minikube start
 minikube addons enable ingress
 minikube ip
+minikube addons list
+minikube addons enable metallb
+minikube dashboard
 sudo vi /etc/hosts
 vim /etc/hosts
 
@@ -63,7 +66,4 @@ Helm Commands:
 > helm uninstall demo-mysql
 
 
-MINIKUBE:
-----------------------
-minikube addons list
-minikube addons enable metallb
+
