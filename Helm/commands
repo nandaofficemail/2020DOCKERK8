@@ -8,9 +8,12 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube version
 
 minikube start
-minikube addons enable ingress
+
 minikube ip
 minikube addons list
+add ip in /etc/hosts file and enable ingress , you can see the http://frontend.label.ip
+---------------------------------------------------------------------------------------
+minikube addons enable ingress
 minikube addons enable metallb
 minikube dashboard
 sudo vi /etc/hosts
