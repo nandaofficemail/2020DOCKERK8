@@ -69,4 +69,6 @@ Helm Commands:
 > helm uninstall demo-mysql
 
 
-
+Install ChartMuseum
+-------------------------------------
+> curl -LO https://s3.amazonaws.com/chartmuseum/release/latest/bin/linux/amd64/chartmuseum
