@@ -76,3 +76,6 @@ Install ChartMuseum
 > sudo mv chartmuseum /usr/local/bin
 > mkdir ~/helm/repo
 > chartmuseum --storage="local" --storage-local-rootdir="/home/me/helm/repo"
+
+> cp *.tgz /home/me/helm/repo
+> curl http://localhost:8080/api/charts | jq .
