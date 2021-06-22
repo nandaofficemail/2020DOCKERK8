@@ -74,3 +74,5 @@ Install ChartMuseum
 > curl -LO https://s3.amazonaws.com/chartmuseum/release/latest/bin/linux/amd64/chartmuseum
 > chmod u+x chartmuseum
 > sudo mv chartmuseum /usr/local/bin
+> mkdir ~/helm/repo
+> chartmuseum --storage="local" --storage-local-rootdir="/home/me/helm/repo"
