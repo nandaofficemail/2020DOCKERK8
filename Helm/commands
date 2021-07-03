@@ -80,3 +80,19 @@ Install ChartMuseum
 
 > cp *.tgz /home/me/helm/repo
 > curl http://localhost:8080/api/charts | jq .
+
+
+> helm dependency list guestbook
+> helm dependency build guestbook
+> helm dependency update guestbook
+
+> helm repo update
+> helm repo add chartmuseum http://localhost:8080
+> helm repo index .
+> helm search repo chartmuseum/
+
+> kubectl get pods
+> helm get manifest dev
+> helm list
+> helm install dev guestbook
+> helm uninstall dev
