@@ -86,7 +86,7 @@ Install ChartMuseum
 
 > helm repo update
 > helm repo add chartmuseum http://localhost:8080
-> helm repo index .
+> helm repo index .   -- this is required to push the .tgz files to chartmuseum. THis command will generate a index.yaml file
 > helm search repo chartmuseum/
 
 > kubectl get pods
