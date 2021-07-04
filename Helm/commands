@@ -98,3 +98,5 @@ Install ChartMuseum
 > helm uninstall dev
 
 > https://kubernetes-charts.storage.googleapis.com  -- stable repository
+> x-www-browser http://google.co.in
+
