@@ -99,4 +99,4 @@ Install ChartMuseum
 
 > https://kubernetes-charts.storage.googleapis.com  -- stable repository
 > x-www-browser http://google.co.in
-
+> kubectl get secret --namespace default demo-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode
