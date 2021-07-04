@@ -82,9 +82,7 @@ Install ChartMuseum
 > curl http://localhost:8080/api/charts | jq .
 
 
-> helm dependency list guestbook
-> helm dependency build guestbook
-> helm dependency update guestbook
+
 
 > helm repo update
 > helm repo add chartmuseum http://localhost:8080
@@ -100,3 +98,18 @@ Install ChartMuseum
 > https://kubernetes-charts.storage.googleapis.com  -- stable repository
 > x-www-browser http://google.co.in
 > kubectl get secret --namespace default demo-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode
+
+> helm repo list
+> helm repo update
+> helm search [repo | hub ] mongodb
+> helm show values
+> helm fetch c_name
+> helm inspect [all | chart | values | readme ] c_name
+> helm dependency build guestbook
+> helm dependency list guestbook
+> helm dependency update guestbook
+
+
+> helm dependency list guestbook
+> helm dependency build guestbook
+> helm dependency update guestbook
