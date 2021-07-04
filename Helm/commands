@@ -97,4 +97,4 @@ Install ChartMuseum
 > helm install dev guestbook
 > helm uninstall dev
 
-> https://kubernetes-charts.storage.googleapis.com
+> https://kubernetes-charts.storage.googleapis.com  -- stable repository
